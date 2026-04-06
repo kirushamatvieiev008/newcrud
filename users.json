@@ -1,0 +1,32 @@
+{
+  "students": [
+    {
+      "id": "3",
+      "name": "newNames",
+      "age": "15",
+      "course": "Data Science",
+      "skills": "Python,Pandas,Machine Learning",
+      "email": "r@gail.com",
+      "isEnrolled": true
+    },
+    {
+      "id": "4",
+      "name": "redik",
+      "age": "85",
+      "course": "Data Science",
+      "skills": "Python,Pandas,Machine Learning",
+      "email": "r@gail.com",
+      "isEnrolled": true
+    },
+    {
+      "name": "kiril",
+      "age": "32",
+      "course": "4",
+      "skills": "t",
+      "email": "mkiril087@gmail.com",
+      "isEnrolled": false,
+      "id": "Z-ruxb65GUY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
