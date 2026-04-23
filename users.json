@@ -1,31 +1,49 @@
 {
   "students": [
     {
-      "id": "3",
-      "name": "newNames",
-      "age": "15",
-      "course": "Data Science",
-      "skills": "Python,Pandas,Machine Learning",
-      "email": "r@gail.com",
-      "isEnrolled": true
-    },
-    {
       "id": "4",
       "name": "redik",
       "age": "85",
-      "course": "Data Science",
+      "course": "Data Scienceeeeee",
       "skills": "Python,Pandas,Machine Learning",
       "email": "r@gail.com",
       "isEnrolled": true
     },
     {
+      "name": "tre",
+      "age": "3",
+      "course": "7",
+      "skills": "r",
+      "email": "tre@gmail.com",
+      "isEnrolled": "enroled",
+      "id": "0mnlMRBZi78"
+    },
+    {
       "name": "kiril",
-      "age": "32",
+      "age": "3",
+      "course": "3",
+      "skills": "n",
+      "email": "mkiril087@gmail.com",
+      "isEnrolled": "not enrolled",
+      "id": "22Djnoa5dkE"
+    },
+    {
+      "name": "tre",
+      "age": "4",
       "course": "4",
       "skills": "t",
       "email": "mkiril087@gmail.com",
-      "isEnrolled": false,
-      "id": "Z-ruxb65GUY"
+      "isEnrolled": "enroled",
+      "id": "UY1eaDAJSl4"
+    },
+    {
+      "name": "kiri",
+      "age": "3",
+      "course": "3",
+      "skills": "u",
+      "email": "mkiril087@gmail.com",
+      "isEnrolled": "not enrolled",
+      "id": "RP1eOj-qjFM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
