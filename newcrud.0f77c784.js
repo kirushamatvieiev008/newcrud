@@ -207,7 +207,7 @@
       });
     }
   }
-})({"kVhBe":[function(require,module,exports,__globalThis) {
+})({"7wZbQ":[function(require,module,exports,__globalThis) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -798,15 +798,23 @@ updateForm.addEventListener("submit", (eventIns)=>{
     modalBack.style.display = "none";
 });
 
-},{"./api/getdata":"kWACw","./templates/rendertemplate":"fuCi0","./api/createitemdata":"kHRNB","./api/deluser":"dERFH","./api/updateitemdata":"boi8k"}],"kWACw":[function(require,module,exports,__globalThis) {
+},{"./api/getdata":"kWACw","./api/createitemdata":"kHRNB","./api/deluser":"dERFH","./api/updateitemdata":"boi8k","./templates/rendertemplate":"fuCi0"}],"kWACw":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getData", ()=>getData);
-const getData = ()=>{
-    return fetch('http://localhost:3000/students').then((res)=>res.json());
+const getData = async ()=>{
+    // let status = null;
+    try {
+        const result = await fetch("http://localhost:3000/students");
+        // status = result.status;
+        if (!result.ok) throw new Error(`mistake: ${result.status}`);
+        return await result.json();
+    } catch (err) {
+        alert(`there is mistake get. ${err}`);
+    }
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"cYYvQ"}],"cYYvQ":[function(require,module,exports,__globalThis) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"jnFvT":[function(require,module,exports,__globalThis) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -836,7 +844,65 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"fuCi0":[function(require,module,exports,__globalThis) {
+},{}],"kHRNB":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createItem", ()=>createItem);
+const createItem = async (ob)=>{
+    const options = {
+        method: "POST",
+        body: JSON.stringify(ob),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    };
+    try {
+        const res = await fetch("http://localhost:3000/students", options);
+        if (!res.ok) throw new Error(`there is some mistake ${res.status}`);
+        return await res.json();
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"dERFH":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "deleteUser", ()=>deleteUser);
+const deleteUser = async (id)=>{
+    try {
+        const res = await fetch(`http://localhost:3000/students/${id}`, {
+            method: "DELETE"
+        });
+        if (!res.ok) throw new Error(`there is mistake: ${res.status}`);
+        return await res.json();
+    } catch (err) {
+        alert(err);
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"boi8k":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "update", ()=>update);
+const update = async (id, obj)=>{
+    const options = {
+        method: "PATCH",
+        body: JSON.stringify(obj),
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8"
+        }
+    };
+    try {
+        const res = await fetch(`http://localhost:3000/students/${id}`, options);
+        if (!res.ok) throw new Error(`there is mistake: ${res.status}`);
+        return await res.json();
+    } catch (err) {
+        alert(err);
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"fuCi0":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderStudents", ()=>renderStudents);
@@ -856,46 +922,6 @@ const renderStudents = (arr)=>{
     return students;
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"cYYvQ"}],"kHRNB":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "createItem", ()=>createItem);
-const createItem = (ob)=>{
-    const options = {
-        method: "POST",
-        body: JSON.stringify(ob),
-        headers: {
-            "Content-type": "application/json, charset=UTF-8"
-        }
-    };
-    return fetch('http://localhost:3000/students', options).then((res)=>res.json());
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"cYYvQ"}],"dERFH":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "deleteUser", ()=>deleteUser);
-const deleteUser = (id)=>{
-    return fetch(`http://localhost:3000/students/${id}`, {
-        method: "DELETE"
-    }).then((res)=>res.json());
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"cYYvQ"}],"boi8k":[function(require,module,exports,__globalThis) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "update", ()=>update);
-const update = (id, obj)=>{
-    const options = {
-        method: "PATCH",
-        body: JSON.stringify(obj),
-        headers: {
-            "Content-Type": "application/json; charset=UTF-8"
-        }
-    };
-    return fetch(`http://localhost:3000/students/${id}`, options).then((res)=>res.json());
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"cYYvQ"}]},["kVhBe","2R06K"], "2R06K", "parcelRequire3809", {})
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}]},["7wZbQ","2R06K"], "2R06K", "parcelRequire3809", {})
 
 //# sourceMappingURL=newcrud.0f77c784.js.map
